@@ -9,19 +9,16 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
-}
-
 img {
   width: 100%;
+  display: block;
 }
 
 .dino-wrap {
@@ -32,29 +29,53 @@ img {
 }
 
 .dino {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 50%;
+  width: 100%;
+}
+
+.dino:nth-child(2) {
+  display: none;
+}
+
+.dino:nth-child(4) {
+  display: none;
 }
 
 @media only screen and (min-width: 25em) {
 
-  .dino-wrap {
-    display: flex;
-    flex-wrap: wrap;
+  .dino {
+    width: 50%;
   }
+
+  .dino:nth-child(2) {
+    display: block;
+  }
+
+  .dino:nth-child(4) {
+    display: block;
+  }
+
 }
 
 @media only screen and (min-width: 38em) {
 
   .dino {
-    max-width: 33.333%;
-    display: flex;
-    flex-wrap: nowrap;
+    width: 33.333%;
   }
 
+  .dino:nth-child(1) {
+    display: none;
+  }
 
+}
 
+@media only screen and (min-width: 60em) {
 
+  .dino {
+    width: 25%;
+  }
+
+  .dino:nth-child(1) {
+    display: block;
+  }
 
 }
